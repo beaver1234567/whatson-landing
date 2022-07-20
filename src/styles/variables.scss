@@ -1,0 +1,29 @@
+:root {
+    --ff: 'Roboto', sans-serif;
+
+    // Accent
+    --clr-accent-light: #eefee1;
+    --clr-accent-dark: #116b61;
+    --clr-accent-hover: #b7cda6;
+
+    // Dark
+    --clr-dark-main: #050505;
+
+    --clr-white: #ffffff;
+
+    --clr-body: var(--clr-white);
+
+    --pd-body-left: 156px;
+}
+
+@media screen and (max-width: 1439px) {
+    :root {
+        --pd-body-left: 94px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    :root {
+        --pd-body-left: 16px;
+    }
+}
