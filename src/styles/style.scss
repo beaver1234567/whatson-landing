@@ -141,7 +141,7 @@
     align-items: center;
     position: relative;
     z-index: 10;
-    margin-bottom: 348px;
+    // margin-bottom: 348px;
 
     &_title {
         @extend %title;
@@ -155,22 +155,30 @@
         margin-bottom: 24px;
     }
 
-    // &::after {
-    //     content: '';
-    //     position: absolute;
-    //     z-index: -1;
+    &::after,
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        height: 871px;
 
-    //     width: 648px;
-    //     height: 500px;
-    //     background-image: url(../assets/images/Main.png);
-    //     background-position: center;
-    //     background-repeat: no-repeat;
-    //     background-size: contain;
+        background-repeat: no-repeat;
+        background-size: contain;
+        top: -294px;
+    }
 
-    //     top: 50%;
-    //     left: calc(100% - 10px);
-    //     transform: translateY(-50%);
-    // }
+    &::before {
+        width: 1092px;
+        background-image: url(../assets/images/left.png);
+        background-position: right;
+        right: min(9vw, 128px);
+    }
+    &::after {
+        width: 1122px;
+        background-image: url(../assets/images/right.png);
+        background-position: left;
+        left: min(9vw, 110px);
+    }
 }
 
 @media screen and (max-width: 999px) {
@@ -182,21 +190,24 @@
             margin-bottom: 20px;
         }
 
-        // &::after {
-        //     width: 580px;
-        //     height: 448px;
+        &::after,
+        &::before {
+            top: 219px;
+        }
 
-        //     top: -50%;
-        //     left: 74%;
-        //     transform: rotate(-15deg);
-        // }
+        &::before {
+            right: -170px;
+        }
+        &::after {
+            left: -185px;
+        }
     }
 }
 
 @media screen and (max-width: 500px) {
     .about__activity {
         max-width: 100%;
-        margin-bottom: calc(265px + 60px + 8px);
+        margin-bottom: calc(265px - 60px - 8px);
         // margin-bottom: 40px;
 
         &_text {
@@ -205,13 +216,24 @@
             margin-bottom: 16px;
         }
 
-        // &::after {
-        //     width: 100%;
-        //     height: calc((100vw - 2 * 16px) / 162 * 125);
-        //     position: static;
-        //     transform: none;
-        //     margin-top: 24px;
-        // }
+        &::after,
+        &::before {
+            height: 505px;
+        }
+
+        &::before {
+            top: calc(100% - 302px + 272px);
+            width: 634px;
+            right: 50%;
+            transform: translateX(calc(50% - 70px));
+        }
+        &::after {
+            top: calc(100% - 302px + 286px);
+            width: 650px;
+            left: 50%;
+            transform: translateX(calc(-50% + 80px));
+            z-index: -10;
+        }
     }
 }
 
