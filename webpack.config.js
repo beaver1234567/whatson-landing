@@ -63,7 +63,7 @@ module.exports = ({ development }) => ({
             patterns: [
                 { from: './src/assets/images/', to: 'public/images' },
                 { from: './src/assets/static/', to: '' },
-                // { from: './src/app-ads.txt', to: '' },
+                { from: './src/app-ads.txt', to: '' },
             ],
         }),
         new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
